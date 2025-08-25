@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Productos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="max-w-6xl mx-auto p-6">
+    <h1 class="text-3xl font-bold text-center mb-6">Lista de Productos</h1>
+
+    <div class="flex justify-end mb-4">
+      <a href="/productos/nuevo" class="bg-teal-400 hover:bg-green-600 text-white px-4 py-2 rounded">➕ Nuevo Producto</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <% productos.forEach(p => { %>
+        <div class="bg-sky-300 p-5 shadow rounded-lg border-4 border-sky-500/50">
+          <h2 class="text-xl font-semibold"><%= p.nombre %></h2>
+          <p class="text-gray-600 mb-3">💲 <%= p.precio %></p>
+          <div class="flex gap-2">
+            <a href="/productos/editar/<%= p.id %>" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">✏️ Editar</a>
+            <form action="/productos/eliminar/<%= p.id %>" method="POST">
+              <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">❌ Eliminar</button>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>

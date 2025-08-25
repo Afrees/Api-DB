@@ -1,0 +1,16 @@
+
+
+//Mostrar la vista de los datos almacenados en la base de datos
+http://localhost:3000/productos/vista
+
+
+//Instalacion para arranque 
+npm init -y
+
+npm i express //  Instala la libreria de Express para levantar el servidor y procesar las peticiones
+npm install mysql2  //Sirve para poder conectar mi Node(Express) con la base de datos MySQL en conclusion el cliente de BD
+npm i ejs  //Es un motor de Plantillas (Embedded JavaScript Templates) sirve para crear vistas HTML junto a JS
+node server.js  // Comando ejecutor
+
+
+
