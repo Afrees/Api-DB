@@ -5,8 +5,11 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true })); // 👉 Para leer datos de formularios
 app.use(express.json()); // 👉 Para leer JSON si lo necesitas en API
+
+
 
 const port = 3000;
 
